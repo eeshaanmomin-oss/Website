@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The personal portfolio of Eeshaan M, showcasing accomplishments, certificates, experience, and interests.">
+  <title>Eeshaan M | Personal Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #12211c;
+      --muted: #66736b;
+      --paper: #f5f4ee;
+      --line: #dce1d8;
+      --leaf: #236044;
+      --leaf-dark: #153c2b;
+      --lime: #c7ef78;
+      --orange: #f28b55;
+      --white: #fffef9;
+      --shadow: 0 22px 50px rgba(24, 55, 39, .09);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Manrope, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+    .mono { font-family: "DM Mono", monospace; letter-spacing: .02em; }
+
+    header {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 24px 0;
+    }
+    .nav { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .mark { font-size: 1rem; font-weight: 800; letter-spacing: -.04em; }
+    .mark span { color: var(--orange); }
+    nav { display: flex; gap: 28px; color: #315046; font-size: .78rem; font-weight: 700; }
+    nav a { transition: color .2s ease; }
+    nav a:hover { color: var(--orange); }
+    .contact-link { border-bottom: 1px solid var(--ink); padding-bottom: 3px; }
+
+    .hero {
+      min-height: 720px;
+      padding: 164px 0 96px;
+      overflow: hidden;
+      background: radial-gradient(circle at 75% 15%, rgba(199, 239, 120, .38), transparent 28%), linear-gradient(120deg, #eef0e8 0%, #f8f5ed 56%, #f8e7d9 100%);
+      position: relative;
+    }
+    .hero::after { content: ""; position: absolute; right: -180px; bottom: -220px; width: 560px; height: 560px; border: 1px solid rgba(35, 96, 68, .14); border-radius: 50%; box-shadow: 0 0 0 38px rgba(35, 96, 68, .04), 0 0 0 76px rgba(35, 96, 68, .04); }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.12fr .88fr; align-items: end; gap: 90px; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; color: var(--leaf); font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .16em; }
+    .eyebrow::before { content: ""; width: 30px; height: 2px; background: var(--orange); }
+    h1 { max-width: 680px; margin: 0; font-size: clamp(3.6rem, 8vw, 7.4rem); line-height: .94; letter-spacing: -.09em; font-weight: 800; }
+    h1 em { color: var(--leaf); font-style: normal; }
+    .hero-copy { max-width: 410px; margin: 34px 0 0; color: var(--muted); font-size: 1.05rem; }
+    .hero-side { padding-bottom: 5px; }
+    .availability { display: flex; align-items: center; gap: 10px; margin-bottom: 58px; font-size: .76rem; color: var(--leaf-dark); font-weight: 700; }
+    .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 0 6px rgba(242, 139, 85, .14); }
+    .hero-note { padding: 22px 0 0 26px; border-left: 1px solid rgba(35, 96, 68, .3); color: #52645a; font-size: .88rem; }
+    .hero-note strong { display: block; margin-bottom: 8px; color: var(--ink); font-size: 1.05rem; }
+    .scroll-cue { display: inline-flex; align-items: center; gap: 14px; margin-top: 60px; color: var(--leaf); font-size: .7rem; text-transform: uppercase; letter-spacing: .14em; font-weight: 800; }
+    .scroll-cue::after { content: "↓"; display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid var(--leaf); border-radius: 50%; font-size: 1rem; }
+
+    section { padding: 116px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 36px; margin-bottom: 48px; }
+    .section-kicker { margin: 0 0 10px; color: var(--orange); font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .15em; }
+    h2 { margin: 0; font-size: clamp(2.2rem, 4vw, 4rem); line-height: 1; letter-spacing: -.07em; }
+    .section-intro { max-width: 300px; margin: 0; color: var(--muted); font-size: .9rem; }
+    .accomplishments { background: var(--white); }
+    .achievement-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .achievement { min-height: 270px; padding: 26px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--line); background: #fbfcf7; transition: transform .3s ease, box-shadow .3s ease; }
+    .achievement:hover { transform: translateY(-7px); box-shadow: var(--shadow); }
+    .achievement:nth-child(2) { background: var(--leaf); color: var(--white); border-color: var(--leaf); }
+    .achievement:nth-child(3) { background: var(--lime); border-color: var(--lime); }
+    .number { font-family: "DM Mono", monospace; font-size: .75rem; opacity: .7; }
+    .achievement h3 { max-width: 210px; margin: 0; font-size: 1.45rem; line-height: 1.1; letter-spacing: -.05em; }
+    .achievement p { max-width: 230px; margin: 0; font-size: .82rem; opacity: .75; }
+
+    .certificates { background: var(--paper); }
+    .certificate-list { border-top: 1px solid var(--line); }
+    .certificate { display: grid; grid-template-columns: 72px 1fr auto; align-items: center; gap: 28px; padding: 25px 0; border-bottom: 1px solid var(--line); }
+    .certificate-num { color: var(--orange); font-family: "DM Mono", monospace; font-size: .75rem; }
+    .certificate h3 { margin: 0 0 5px; font-size: 1.15rem; letter-spacing: -.04em; }
+    .certificate p { margin: 0; color: var(--muted); font-size: .82rem; }
+    .certificate-date { color: var(--muted); font-family: "DM Mono", monospace; font-size: .72rem; }
+
+    .experience { background: var(--leaf-dark); color: var(--white); }
+    .experience .section-intro { color: #b8c9be; }
+    .experience .section-kicker { color: var(--lime); }
+    .role { display: grid; grid-template-columns: 180px 1fr 180px; gap: 30px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,.2); }
+    .role:last-child { border-bottom: 1px solid rgba(255,255,255,.2); }
+    .role-period { color: var(--lime); font-family: "DM Mono", monospace; font-size: .72rem; }
+    .role h3 { margin: 0 0 7px; font-size: 1.4rem; letter-spacing: -.04em; }
+    .role p { margin: 0; color: #b8c9be; font-size: .88rem; }
+    .role-company { color: #b8c9be; font-size: .82rem; text-align: right; }
+
+    .about { background: #f8e7d9; }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 100px; align-items: start; }
+    .about-display { font-size: clamp(2.5rem, 5vw, 5rem); line-height: .96; letter-spacing: -.08em; }
+    .about-display span { color: var(--orange); }
+    .about-text { max-width: 520px; color: #5f665f; font-size: 1rem; }
+    .about-text p { margin: 0 0 20px; }
+    .traits { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 32px; }
+    .trait { padding: 8px 12px; border: 1px solid rgba(18,33,28,.22); border-radius: 99px; color: var(--ink); font-family: "DM Mono", monospace; font-size: .7rem; }
+    footer { padding: 32px 0; background: var(--ink); color: #d8e5d9; }
+    .footer-row { display: flex; justify-content: space-between; gap: 20px; align-items: center; font-size: .72rem; }
+    .footer-row a { color: var(--lime); }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 32px, 560px); }
+      header { padding: 18px 0; }
+      nav { display: none; }
+      .hero { min-height: auto; padding: 130px 0 74px; }
+      .hero-grid, .about-grid { grid-template-columns: 1fr; gap: 46px; }
+      .hero-side { padding: 0; }
+      .availability { margin-bottom: 28px; }
+      .hero-note { max-width: 340px; }
+      section { padding: 78px 0; }
+      .section-head { display: block; margin-bottom: 34px; }
+      .section-intro { margin-top: 20px; }
+      .achievement-grid { grid-template-columns: 1fr; }
+      .achievement { min-height: 210px; }
+      .certificate { grid-template-columns: 36px 1fr; gap: 14px; }
+      .certificate-date { grid-column: 2; }
+      .role { grid-template-columns: 1fr; gap: 10px; }
+      .role-company { text-align: left; }
+      .about-grid { gap: 32px; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } .reveal { opacity: 1; transform: none; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell nav">
+      <a class="mark" href="#top">Eeshaan<span>.</span>M</a>
+      <nav aria-label="Primary navigation">
+        <a href="#accomplishments">Accomplishments</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#experience">Experience</a>
+        <a href="#about">About</a>
+      </nav>
+      <a class="contact-link mono" href="mailto:eeshaan.momin@gmail.com.com">Let's connect ↗</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <div class="eyebrow">Personal portfolio · 2026</div>
+          <h1>Building a life of <em>curious work.</em></h1>
+          <p class="hero-copy">Hi, I'm Eeshaan M. This is a record of the things I've learned, made, and been proud to be part of.</p>
+          <a class="scroll-cue" href="#accomplishments">Explore the work</a>
+        </div>
+        <div class="hero-side">
+          <div class="availability"><span class="dot"></span> Open to meaningful opportunities</div>
+          <div class="hero-note"><strong>Small steps. Real momentum.</strong> A personal archive of milestones, experiences, and the ideas that keep me moving forward.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="accomplishments" id="accomplishments">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div><p class="section-kicker">01 / Highlights</p><h2>Accomplishments</h2></div>
+          <p class="section-intro">A few milestones that mark the direction I've been heading in.</p>
+        </div>
+        <div class="achievement-grid">
+          <article class="achievement reveal"><span class="number">01 — MILESTONE</span><h3>Led a project from idea to launch.</h3><p>Turned a loose concept into a thoughtful, working outcome with a focused team, which helped the UHSL IT team with the design of our .</p></article>
+          <article class="achievement reveal"><span class="number">02 — MILESTONE</span><h3>Made room for better questions.</h3><p>Built a habit of learning in public, sharing progress, and asking what could improve.</p></article>
+          <article class="achievement reveal"><span class="number">03 — MILESTONE</span><h3>Kept raising the bar.</h3><p>Continued developing the craft, one challenge and one honest iteration at a time.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="certificates" id="certificates">
+      <div class="shell">
+        <div class="section-head reveal"><div><p class="section-kicker">02 / Learning</p><h2>Certificates</h2></div><p class="section-intro">Credentials are useful. The knowledge behind them is what stays.</p></div>
+        <div class="certificate-list">
+          <article class="certificate reveal"><span class="certificate-num">01</span><div><h3>Certificate or Course Name</h3><p>Issuing organization · Add a short focus or skill here</p></div><span class="certificate-date">2026</span></article>
+          <article class="certificate reveal"><span class="certificate-num">02</span><div><h3>Certificate or Course Name</h3><p>Issuing organization · Add a short focus or skill here</p></div><span class="certificate-date">2025</span></article>
+          <article class="certificate reveal"><span class="certificate-num">03</span><div><h3>Certificate or Course Name</h3><p>Issuing organization · Add a short focus or skill here</p></div><span class="certificate-date">2024</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience" id="experience">
+      <div class="shell">
+        <div class="section-head reveal"><div><p class="section-kicker">03 / Experience</p><h2>Where I've worked</h2></div><p class="section-intro">The environments, people, and problems that have shaped how I work.</p></div>
+        <div class="role-list">
+          <article class="role reveal"><span class="role-period">Jan 2026 — NOW</span><div><h3>User IT Support Technician at the University of Houston</h3><p>Resolved campus IT service tickets by performing rigorous hardware and software diagnostics, enforce campus security policies by provisioning identity and access management (IAM) controls for 300+ students and faculty members and orchestrated live network configurations and technical troubleshooting to maintain 100% uptime for 10+ large-scale university events.</p></div><span class="role-company">University of Houston</span></article>
+          <article class="role reveal"><span class="role-period">Jan 2025 — Apr 2025</span><div><h3>Junior Software Engineer</h3><p>Decreased software bug backlog resolution time by 30% by writing modular Python scripts and performing systematic code reviews. This optimized internal network connectivity and uptime by 20% though proactive troubleshooting of hardware nodes and access control configurations.</p></div><span class="role-company">Transnet INC</span></article>
+          <article class="role reveal"><span class="role-period">May 2024 — Dec 2024</span><div><h3>Computer Repair Technician</h3><p>Restore compromised enterprise systems by executing advanced malware/virus removal and secure data recovery operations for 50+ client accounts and minimized recurring hardware and software failures by 20% through enterprise serer administration, component upgrades, and targeted network optimization.</p></div><span class="role-company">XM Computers</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="shell about-grid">
+        <div class="about-display reveal">A little more <span>about me.</span></div>
+        <div class="about-text reveal"><p>I have also worked on my personal projects. Link to my github profile: <a href="https://github.com/eeshaanmomin-oss?tab=overview&from=2026-08-01&to=2026-08-31" target="_blank">https://github.com/eeshaanmomin-oss</a></p><p>Outside of work and school, I'm usually learning something new, exploring a new point of view, or making time for the people and interests that keep life full.</p><div class="traits"><span class="trait">Curious by default</span><span class="trait">Always learning</span><span class="trait">People-first</span><span class="trait">Detail-minded</span></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="shell footer-row"><span>© 2026 Eeshaan M</span><span>Built with intention · <a href="mailto:eeshaan.momin@egmail.com">Get in touch ↗</a></span></div></footer>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+  </script>
+</body>
+</html>
