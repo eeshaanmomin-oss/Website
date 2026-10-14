@@ -95,6 +95,9 @@
     .certificate h3 { margin: 0 0 5px; font-size: 1.15rem; letter-spacing: -.04em; }
     .certificate p { margin: 0; color: var(--muted); font-size: .82rem; }
     .certificate-date { color: var(--muted); font-family: "DM Mono", monospace; font-size: .72rem; }
+    .certificate-image { display: block; width: min(100%, 240px); height: auto; margin-top: 16px; border: 1px solid var(--line); border-radius: 8px; }
+    .certificate-files { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 14px 0 0; padding: 0; list-style: none; }
+    .certificate-files a { color: var(--leaf); font-size: .78rem; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 
     .experience { background: var(--leaf-dark); color: var(--white); }
     .experience .section-intro { color: #b8c9be; }
@@ -192,9 +195,23 @@
       <div class="shell">
         <div class="section-head reveal"><div><p class="section-kicker">02 / Learning</p><h2>Certificates</h2></div><p class="section-intro">Credentials are useful. The knowledge behind them is what stays.</p></div>
         <div class="certificate-list">
-          <article class="certificate reveal"><span class="certificate-num">01</span><div><h3>AWS Certified Cloud Practitioner</h3><p>AWS · Foundational cert focused on 5+ domains like EC2, S3, and IAM.</p></div><span class="certificate-date">2026</span></article>
-          <article class="certificate reveal"><span class="certificate-num">02</span><div><h3>Technical Support Fundamentals</h3><p>Google Cloud · Foundational cert focused on cloud concepts, services, and security.</p></div><span class="certificate-date">2025</span></article>
-          <article class="certificate reveal"><span class="certificate-num">03</span><div><h3>Appathon</h3><p>Houston City College · Engineering an accessible mobile application.</p></div><span class="certificate-date">2024</span></article>
+          <article class="certificate reveal"><span class="certificate-num">01</span><div><h3>HP Enterprise Security Fundamentals</h3><p>HP · Foundational cert focused on enterprise security concepts and practices.</p><img class="certificate-image" src="images/HPE Cyber Cert.PNG" alt="HP Enterprise Security Fundamentals badge" loading="lazy"></div><span class="certificate-date">2026</span></article>
+          <article class="certificate reveal"><span class="certificate-num">02</span><div><h3>AWS Certified Cloud Practitioner</h3><p>AWS · Foundational cert focused on 5+ domains like EC2, S3, and IAM.</p><img class="certificate-image" src="images/aws-ccp-badge.png" alt="AWS Certified Cloud Practitioner badge" loading="lazy"></div><span class="certificate-date">2026</span></article>
+          <article class="certificate reveal">
+            <span class="certificate-num">03</span>
+            <div>
+              <h3>Technical Support Fundamentals</h3>
+              <p>Coursera · Course certificates in technical support, networking, operating systems, and IT infrastructure.</p>
+              <ul class="certificate-files">
+                <li><a href="certificates/Coursera%20Technical%20Support%20Funadmentals.pdf" target="_blank" rel="noopener">Technical Support Fundamentals</a></li>
+                <li><a href="certificates/Bits%20and%20Bytes%20of%20Computer%20Networking.pdf" target="_blank" rel="noopener">Bits and Bytes of Computer Networking</a></li>
+                <li><a href="certificates/Coursera%20OS.pdf" target="_blank" rel="noopener">Operating Systems</a></li>
+                <li><a href="certificates/Coursera%20SYS%20ADMIN%20and%20IT%20INFRASTRUCTURE%20SERVICE.pdf" target="_blank" rel="noopener">System Administration and IT Infrastructure Services</a></li>
+              </ul>
+            </div>
+            <span class="certificate-date">2025</span>
+          </article>
+          <article class="certificate reveal"><span class="certificate-num">04</span><div><h3>Appathon</h3><p>Houston City College · Engineering an accessible mobile application.</p></div><span class="certificate-date">2024</span></article>
         </div>
       </div>
     </section>
